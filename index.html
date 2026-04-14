@@ -21,34 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* --- GLOW EFFECTS (Added by Gemini) --- */
-        .glow-logo {
-            box-shadow: 0 0 20px var(--orange);
-        }
-        
-        .member-card {
-            background: #111 !important;
-            border: 1px solid #333 !important;
-            transition: 0.4s !important;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-
-        .member-card:hover {
-            border-color: var(--orange) !important;
-            box-shadow: 0 0 20px rgba(253, 126, 20, 0.4) !important;
-            transform: translateY(-5px);
-        }
-
-        .member-photo {
-            box-shadow: 0 0 15px var(--orange);
-            transition: 0.4s;
-        }
-        
-        .member-card:hover .member-photo {
-            box-shadow: 0 0 25px var(--orange);
-        }
-        /* -------------------------------------- */
-
         /* Nav Style */
         nav {
             background: rgba(0, 0, 0, 0.9);
@@ -101,7 +73,7 @@
 
         .active-section {
             display: block;
-            animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out; /* Eita holo magic animation */
         }
 
         /* Dashboard/Home */
@@ -139,6 +111,15 @@
             border: 1px solid #333;
         }
 
+        .photo-space {
+            width: 100px;
+            height: 100px;
+            background: #333;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 2px dashed #555;
+        }
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -169,4 +150,82 @@
 <div id="home" class="page-section active-section">
     <div class="container">
         <header>
-            <img src="fusion.jpg"
+            <img src="fusion.jpg" alt="Fusion Fest Logo">
+            <h1 style="font-size: 2.5rem; margin: 10px 0;">Fusion Fest Community</h1>
+            <p style="color: #bbb;">Welcome to our official portal!</p>
+        </header>
+        <div class="card">
+            <h3>Thank you for visiting us!</h3>
+            <p>Our goal is to create a platform for creative minds.</p>
+            <p>📞 Contact: +8801719397669</p>
+            <a href="#" class="btn" style="background: #1877F2;">Facebook Page</a>
+        </div>
+    </div>
+</div>
+
+<div id="panel" class="page-section">
+    <div class="container">
+        <h2 style="text-align:center; color: var(--orange);">Panel Members</h2>
+        <div class="grid">
+            <div class="member-card"><img src="rayhan.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>A.K.M Rayhan Munshi</h4><p style="color:var(--orange)">Founder & Chairman</p></div>
+            <div class="member-card"><img src="shafin.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>Shafin Ahamed</h4><p style="color:var(--blue)">Co-Founder</p></div>
+            <div class="member-card"><img src="siam.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>Saimum Azam Siam</h4><p>Marketing Head & COO</p></div>
+            <div class="member-card"><img src="sohail.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>Sohail Islam</h4><p>Lead Graphic Designer</p></div>
+            <div class="member-card"><img src="samir.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>Samir Ahmed</h4><p>CHRO & Video Editor</p></div>
+            <div class="member-card"><img src="ibrahim.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fd7e14; display: block; margin: 0 auto 10px;"><h4>Ibrahim Khalil</h4><p>Assistant Operating Officer</p></div>
+        </div>
+    </div>
+</div>
+
+<div id="prizes" class="page-section">
+    <div class="container">
+        <div class="card" style="border-top-color: var(--green);">
+            <h2 style="color: var(--green);">Prize Details</h2>
+            <p>🔸1st Place: Premium Crest, Medal, Certificate</p>
+            <p>🔸2nd Place: Premium Crest, Medal, Certificate</p>
+            <p>🔸3rd Place: Premium Crest, Medal, Certificate</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">🔹 All participants will receive an E-Certificate.</p>
+        </div>
+    </div>
+</div>
+
+<div id="exam" class="page-section">
+    <div class="container">
+        <div class="card">
+            <h2>Exam & Syllabus</h2>
+            <p><b>Event Date:</b> May 30, 2026</p>
+            <hr style="border: 0.5px solid #333;">
+            <h4>Islamic Quiz</h4>
+            <p>➡️syllabus: From the question bank</p>
+            <h4>Photography</h4>
+            <p>➡️Theme:Not specific </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Fusion Fest Community. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    function show(id) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(s => s.classList.remove('active-section'));
+
+        // Show selected section
+        const active = document.getElementById(id);
+        active.classList.add('active-section');
+
+        // Close menu
+        document.getElementById('navLinks').classList.remove('active');
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
